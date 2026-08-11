@@ -1,4 +1,4 @@
-# Student Performance Analysis – Day 3
+# Student Performance Analysis & Prediction – Day 4
 
 ## Project Overview
 
@@ -48,17 +48,65 @@ Three charts were created using Matplotlib:
 - `chart1_score_distribution.png` – Score distribution chart
 - `chart2_average_score_by_course.png` – Average score by course
 - `chart3_attendance_vs_final_score.png` – Attendance vs final score chart
-
 ## Conclusion
-
 The analysis shows that student performance varies across different courses. Students with lower attendance may be more likely to have lower final scores. The course-wise comparison also helps identify differences in average performance between courses.
-
 Overall, this project demonstrates the basic data analysis workflow:
-
 **Dataset → Pandas → Data Cleaning → Analysis → Visualization**
-
 ## Technologies Used
-
 - Python
 - Pandas
 - Matplotlib
+- Scikit-learn
+## Day 4 – Student Performance Prediction
+### Problem Solved
+In Day 4, I built a Machine Learning model to predict whether a student is likely to Pass or Fail based on their academic performance.
+### Features Used
+The model uses these features:
+- Attendance
+- Assignment Score
+- Midterm Score
+- Final Score
+### Target Variable
+The target column is **Pass**:
+
+- 1 = Pass
+- 0 = Fail
+
+### Machine Learning Model
+
+I used **Logistic Regression** for classification.
+
+Logistic Regression is used when we want to predict categories, such as Pass or Fail.
+
+### Train/Test Split
+
+The dataset was divided into:
+
+- Training data: 80% (24 students)
+- Testing data: 20% (6 students)
+
+### Model Evaluation
+
+The model achieved:
+
+**Accuracy: 100%**
+
+Confusion Matrix:
+
+- Actual Fail predicted as Fail: 1
+- Actual Fail predicted as Pass: 0
+- Actual Pass predicted as Fail: 0
+- Actual Pass predicted as Pass: 5
+
+### Visualizations
+
+1. Confusion Matrix – `confusion_matrix.png`
+2. Actual vs Predicted Pass/Fail – `actual_vs_predicted.png`
+
+### What I Learned
+
+Through this project, I learned the basic Machine Learning workflow:
+
+**Data → Features → Target → Train/Test Split → Model Training → Prediction → Evaluation**
+
+I also learned how to use Scikit-learn for classification and how to evaluate a model using accuracy, confusion matrix, and classification report.
