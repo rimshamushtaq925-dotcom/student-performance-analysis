@@ -1,112 +1,94 @@
-# Student Performance Analysis & Prediction – Day 4
+# Student Performance - Model Comparison
 
-## Project Overview
+## Objective
 
-This project analyzes student performance data using Python and Pandas.
-
-The analysis includes data cleaning, basic statistics, student performance analysis, and data visualization using Matplotlib.
+The objective of this project is to compare two machine learning classification algorithms for predicting whether a student will pass or fail based on their academic performance.
 
 ## Dataset
 
-The dataset contains student information including:
+The dataset contains 30 student records with information about:
 
-- Student Name
-- Age
-- Gender
-- Course
 - Attendance
 - Assignment Score
 - Midterm Score
 - Final Score
 
-## Analysis Performed
-
-The program performs the following analysis:
-
-1. Loads the student performance dataset.
-2. Displays basic information about the dataset.
-3. Calculates average scores.
-4. Finds the highest and lowest scores.
-5. Identifies students with attendance below 75%.
-6. Identifies students who are at risk of failing.
-7. Calculates average final score by course.
-8. Analyzes the relationship between attendance and final score.
-9. Handles missing and invalid values.
-
-## Visualizations
-
-Three charts were created using Matplotlib:
-
-1. Final Score Distribution
-2. Average Final Score by Course
-3. Attendance vs Final Score
-
-## Files
-
-- `student_performance.csv` – Dataset
-- `student_analysis.py` – Python analysis code
-- `chart1_score_distribution.png` – Score distribution chart
-- `chart2_average_score_by_course.png` – Average score by course
-- `chart3_attendance_vs_final_score.png` – Attendance vs final score chart
-## Conclusion
-The analysis shows that student performance varies across different courses. Students with lower attendance may be more likely to have lower final scores. The course-wise comparison also helps identify differences in average performance between courses.
-Overall, this project demonstrates the basic data analysis workflow:
-**Dataset → Pandas → Data Cleaning → Analysis → Visualization**
-## Technologies Used
-- Python
-- Pandas
-- Matplotlib
-- Scikit-learn
-## Day 4 – Student Performance Prediction
-### Problem Solved
-In Day 4, I built a Machine Learning model to predict whether a student is likely to Pass or Fail based on their academic performance.
-### Features Used
-The model uses these features:
-- Attendance
-- Assignment Score
-- Midterm Score
-- Final Score
-### Target Variable
-The target column is **Pass**:
+The target variable is:
 
 - 1 = Pass
 - 0 = Fail
 
-### Machine Learning Model
+## Machine Learning Models
 
-I used **Logistic Regression** for classification.
+Two classification algorithms were trained and compared:
 
-Logistic Regression is used when we want to predict categories, such as Pass or Fail.
+1. Logistic Regression
+2. Decision Tree
 
-### Train/Test Split
+## Train-Test Split
 
 The dataset was divided into:
 
-- Training data: 80% (24 students)
-- Testing data: 20% (6 students)
+- Training records: 24
+- Testing records: 6
 
-### Model Evaluation
+The test size was 20%.
 
-The model achieved:
+## Model Accuracy
 
-**Accuracy: 100%**
+| Model | Accuracy |
+|---|---:|
+| Logistic Regression | 83.33% |
+| Decision Tree | 83.33% |
 
-Confusion Matrix:
+## Classification Results
 
-- Actual Fail predicted as Fail: 1
-- Actual Fail predicted as Pass: 0
-- Actual Pass predicted as Fail: 0
-- Actual Pass predicted as Pass: 5
+Both models produced the same overall performance on the test dataset.
 
-### Visualizations
+### Logistic Regression
 
-1. Confusion Matrix – `confusion_matrix.png`
-2. Actual vs Predicted Pass/Fail – `actual_vs_predicted.png`
+- Accuracy: 83.33%
+- Precision: 0.88
+- Recall: 0.83
+- F1-score: 0.83
 
-### What I Learned
+### Decision Tree
 
-Through this project, I learned the basic Machine Learning workflow:
+- Accuracy: 83.33%
+- Precision: 0.88
+- Recall: 0.83
+- F1-score: 0.83
 
-**Data → Features → Target → Train/Test Split → Model Training → Prediction → Evaluation**
+## Confusion Matrix
 
-I also learned how to use Scikit-learn for classification and how to evaluate a model using accuracy, confusion matrix, and classification report.
+Both models produced the following confusion matrix:
+
+| Actual / Predicted | Fail (0) | Pass (1) |
+|---|---:|---:|
+| Fail (0) | 3 | 0 |
+| Pass (1) | 1 | 2 |
+
+This means that 5 out of 6 test records were correctly classified.
+
+## Conclusion
+
+Logistic Regression and Decision Tree achieved the same accuracy of 83.33% on the test dataset. Both models also produced the same precision, recall, and F1-score.
+
+Therefore, neither model has a clear performance advantage on this dataset.
+
+## Technologies Used
+
+- Python
+- Pandas
+- Scikit-learn
+- Matplotlib
+- Seaborn
+
+## Project Files
+
+- `student_model_comparison.py` - Model training and comparison
+- `student_performance.csv` - Student dataset
+- `student_analysis.py` - Student performance analysis
+- `student_prediction.py` - Student prediction model
+- `confusion_matrix.png` - Confusion matrix visualization
+- `README.md` - Project documentation
